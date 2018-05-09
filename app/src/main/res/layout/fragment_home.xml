@@ -7,16 +7,15 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.v4.view.ViewPager
-            android:id="@+id/View_page"
+    <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-    </android.support.v4.view.ViewPager>
-    <TableLayout
-            android:id="@+id/Table_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
+        <android.support.v4.view.ViewPager
+                android:id="@+id/View_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
 
-    </TableLayout>
 
 </LinearLayout>
