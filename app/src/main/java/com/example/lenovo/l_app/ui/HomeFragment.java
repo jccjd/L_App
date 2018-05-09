@@ -46,7 +46,8 @@ public class HomeFragment extends Fragment {
         mFragments.add(new VideoFragment());
         mFragments.add(new ImageFragment());
 
-        mViewPager.setAdapter(new MyFrgamentPagerAdapter(getChildFragmentManager()));
+        mViewPager.setAdapter(new MyFragmentPagerAdapter(getChildFragmentManager()));
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     private void initView() {
@@ -55,9 +56,9 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private class MyFrgamentPagerAdapter extends FragmentPagerAdapter {
+    private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
-        public MyFrgamentPagerAdapter(FragmentManager fm) {
+        public MyFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
