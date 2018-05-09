@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.lenovo.l_app.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +23,8 @@ public class HomeFragment extends Fragment {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private View mView;
+    private List<Fragment> mFragments;
+    private String[] mPageTitle = {"新闻","视屏","图片"};
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -36,7 +41,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void init() {
-        mViewPager.setAdapter(new MyFramentPagerAdapter());
+        mFragments = new ArrayList<>();
+        mFragments.add(new NewsFragment());
+        mFragments.add(new VideoFragment());
+        mFragments.add(new ImageFragment());
+
+        mViewPager.setAdapter(new MyFrgamentPagerAdapter(getChildFragmentManager()));
     }
 
     private void initView() {
@@ -45,20 +55,26 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private class MyFramentPagerAdapter extends FragmentPagerAdapter {
+    private class MyFrgamentPagerAdapter extends FragmentPagerAdapter {
 
-        public MyFramentPagerAdapter(FragmentManager fm) {
+        public MyFrgamentPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            return null;
+            return mFragments.get(position);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            return mPageTitle[position];
         }
 
         @Override
         public int getCount() {
-            return 0;
+            return mFragments.size();
         }
     }
 }
