@@ -1,13 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context="com.example.lenovo.l_app.ui.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
 
-</FrameLayout>
+    <android.support.v4.view.ViewPager
+            android:id="@+id/View_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+    <TableLayout
+            android:id="@+id/Table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </TableLayout>
+
+</LinearLayout>
