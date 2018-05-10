@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ApiService {
     @GET("getnews.php")
-    Call<HttpResult<List<news>>>
+    Call<HttpResult<List<News>>> getNews();
 
 }
